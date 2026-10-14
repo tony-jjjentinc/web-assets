@@ -1,0 +1,22 @@
+Copyright (c) 2026 Juan Jamora, Jr. Enterprises, Inc. All rights reserved.
+
+1. Ownership. The source code, design tokens, generated stylesheets, scripts, documentation, logos, images, patterns and
+   brand names in this repository, and the files published from it (the "Assets"), are the property of the copyright
+   holder and are not open source.
+
+2. Permitted use. The Assets may be loaded from their official published URLs (for example through jsDelivr) by web
+   applications operated by or on behalf of the copyright holder. No other right is granted. In particular, you may not
+   copy, modify, redistribute or sublicense the Assets, or use the logos and brand names, without written permission.
+
+3. The repository is public only so that it can be served by a public CDN. Public access does not grant any licence.
+
+4. No warranty. The Assets are provided "as is", without warranty of any kind.
+
+Third-party material (not covered by the notice above)
+
+- Inter (variable font files in fonts/files/), Copyright 2016 The Inter Project Authors, SIL Open Font License 1.1.
+  The full licence is distributed with the font in fonts/files/INTER-LICENSE.txt.
+- Small SVG icon paths (the accordion chevron and the form validation icons) are taken from Bootstrap 5,
+  Copyright 2011-2025 The Bootstrap Authors, MIT License (https://github.com/twbs/bootstrap/blob/main/LICENSE).
+- The package depends, for building and testing only, on open-source software under its own licences; none of it is
+  included in the published files except as stated above.
