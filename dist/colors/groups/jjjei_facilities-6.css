@@ -1,0 +1,56 @@
+/* jjjei_facilities-6: Facilities / Design and Drafting (v1: jjjei_facilities:6) */
+:root {
+  --jjjei-primary: #1E90FF;
+  --jjjei-primary-rgb: 30, 144, 255;
+  --jjjei-primary-contrast: #191c1f;
+  --jjjei-primary-hover-contrast: #191c1f;
+  --jjjei-primary-active-contrast: #191c1f;
+  --jjjei-primary-hover-bg: #40a1ff;
+  --jjjei-primary-hover-border: #359bff;
+  --jjjei-primary-active-bg: #4ba6ff;
+  --jjjei-primary-active-border: #359bff;
+  --jjjei-primary-focus-rgb: 29, 127, 221;
+  --jjjei-primary-focus-border: #8fc8ff;
+  --jjjei-primary-subtle: #c7e3ff;
+  --jjjei-primary-border-subtle: #c7e3ff;
+  --jjjei-primary-faint: #4ba6ff;
+  --jjjei-primary-faint-border: #4ba6ff;
+  --jjjei-primary-shaded: #145ea6;
+  --jjjei-primary-shaded-border: #145ea6;
+  --jjjei-primary-body: #eff7ff;
+  --jjjei-primary-body-border: #e4f2ff;
+  --jjjei-primary-emphasis: #125699;
+  --jjjei-primary-link: #125699;
+  --jjjei-primary-link-rgb: 18, 86, 153;
+  --jjjei-primary-link-hover: #0e457a;
+  --jjjei-primary-link-hover-rgb: 14, 69, 122;
+  --jjjei-primary-link-focus-rgb: 53, 111, 168;
+  --jjjei-primary-link-helper-hover: #4ba6ff;
+  --jjjei-primary-link-helper-hover-rgb: 75, 166, 255;
+  --jjjei-primary-range-active: #bcdeff;
+  --jjjei-primary-text: #1873cc;
+  --jjjei-primary-table-bg: #d2e9ff;
+  --jjjei-primary-table-color: #191c1f;
+  --jjjei-primary-table-border: #adc0d2;
+  --jjjei-primary-table-striped: #c9dff4;
+  --jjjei-primary-table-active: #c0d4e9;
+  --jjjei-primary-table-hover: #c4d9ee;
+  --jjjei-primary-base-bg: #6666ff;
+  --jjjei-primary-switch-focus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%238fc8ff'/%3E%3C/svg%3E");
+  --jjjei-primary-accordion-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23125699' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+}
+[data-bs-theme="dark"], [data-theme="dark"], .dark {
+  --jjjei-primary-subtle: #082440;
+  --jjjei-primary-border-subtle: #082440;
+  --jjjei-primary-faint: #1873cc;
+  --jjjei-primary-faint-border: #1873cc;
+  --jjjei-primary-body: #020c14;
+  --jjjei-primary-body-border: #051626;
+  --jjjei-primary-emphasis: #78bcff;
+  --jjjei-primary-link: #78bcff;
+  --jjjei-primary-link-rgb: 120, 188, 255;
+  --jjjei-primary-link-hover: #93caff;
+  --jjjei-primary-link-hover-rgb: 147, 202, 255;
+  --jjjei-primary-base-bg: #000099;
+  --jjjei-primary-accordion-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2378bcff'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}

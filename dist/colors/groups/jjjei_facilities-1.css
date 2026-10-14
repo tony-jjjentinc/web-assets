@@ -1,0 +1,56 @@
+/* jjjei_facilities-1: Facilities / Architectural, Civil, and Structural (ACS) (v1: jjjei_facilities:1) */
+:root {
+  --jjjei-primary: #97D9FF;
+  --jjjei-primary-rgb: 151, 217, 255;
+  --jjjei-primary-contrast: #191c1f;
+  --jjjei-primary-hover-contrast: #191c1f;
+  --jjjei-primary-active-contrast: #191c1f;
+  --jjjei-primary-hover-bg: #a7dfff;
+  --jjjei-primary-hover-border: #a1ddff;
+  --jjjei-primary-active-bg: #ace1ff;
+  --jjjei-primary-active-border: #a1ddff;
+  --jjjei-primary-focus-rgb: 132, 189, 221;
+  --jjjei-primary-focus-border: #cbecff;
+  --jjjei-primary-subtle: #e5f6ff;
+  --jjjei-primary-border-subtle: #e5f6ff;
+  --jjjei-primary-faint: #ace1ff;
+  --jjjei-primary-faint-border: #ace1ff;
+  --jjjei-primary-shaded: #628da6;
+  --jjjei-primary-shaded-border: #628da6;
+  --jjjei-primary-body: #f8fcff;
+  --jjjei-primary-body-border: #f3faff;
+  --jjjei-primary-emphasis: #4f7185;
+  --jjjei-primary-link: #53778c;
+  --jjjei-primary-link-rgb: 83, 119, 140;
+  --jjjei-primary-link-hover: #425f70;
+  --jjjei-primary-link-hover-rgb: 66, 95, 112;
+  --jjjei-primary-link-focus-rgb: 108, 139, 157;
+  --jjjei-primary-link-helper-hover: #ace1ff;
+  --jjjei-primary-link-helper-hover-rgb: 172, 225, 255;
+  --jjjei-primary-range-active: #e0f4ff;
+  --jjjei-primary-text: #53778c;
+  --jjjei-primary-table-bg: #eaf7ff;
+  --jjjei-primary-table-color: #191c1f;
+  --jjjei-primary-table-border: #c0ccd2;
+  --jjjei-primary-table-striped: #e0ecf4;
+  --jjjei-primary-table-active: #d5e1e9;
+  --jjjei-primary-table-hover: #dbe7ee;
+  --jjjei-primary-base-bg: #6666ff;
+  --jjjei-primary-switch-focus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23cbecff'/%3E%3C/svg%3E");
+  --jjjei-primary-accordion-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%234f7185' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+}
+[data-bs-theme="dark"], [data-theme="dark"], .dark {
+  --jjjei-primary-subtle: #263640;
+  --jjjei-primary-border-subtle: #263640;
+  --jjjei-primary-faint: #79aecc;
+  --jjjei-primary-faint-border: #79aecc;
+  --jjjei-primary-body: #0c1114;
+  --jjjei-primary-body-border: #172126;
+  --jjjei-primary-emphasis: #c1e8ff;
+  --jjjei-primary-link: #c1e8ff;
+  --jjjei-primary-link-rgb: 193, 232, 255;
+  --jjjei-primary-link-hover: #cdedff;
+  --jjjei-primary-link-hover-rgb: 205, 237, 255;
+  --jjjei-primary-base-bg: #000099;
+  --jjjei-primary-accordion-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23c1e8ff'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}

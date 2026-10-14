@@ -1,0 +1,56 @@
+/* jjjei_hr-2: HR / Payroll and Benefits (v1: jjjei_hr:2) */
+:root {
+  --jjjei-primary: #4B0082;
+  --jjjei-primary-rgb: 75, 0, 130;
+  --jjjei-primary-contrast: #f8f9fa;
+  --jjjei-primary-hover-contrast: #f8f9fa;
+  --jjjei-primary-active-contrast: #f8f9fa;
+  --jjjei-primary-hover-bg: #40006f;
+  --jjjei-primary-hover-border: #3c0068;
+  --jjjei-primary-active-bg: #3c0068;
+  --jjjei-primary-active-border: #380062;
+  --jjjei-primary-focus-rgb: 101, 37, 148;
+  --jjjei-primary-focus-border: #a580c1;
+  --jjjei-primary-subtle: #d2bfe0;
+  --jjjei-primary-border-subtle: #d2bfe0;
+  --jjjei-primary-faint: #6f339b;
+  --jjjei-primary-faint-border: #6f339b;
+  --jjjei-primary-shaded: #310055;
+  --jjjei-primary-shaded-border: #310055;
+  --jjjei-primary-body: #f2edf6;
+  --jjjei-primary-body-border: #e9e0f0;
+  --jjjei-primary-emphasis: #1e0034;
+  --jjjei-primary-link: #4b0082;
+  --jjjei-primary-link-rgb: 75, 0, 130;
+  --jjjei-primary-link-hover: #3c0068;
+  --jjjei-primary-link-hover-rgb: 60, 0, 104;
+  --jjjei-primary-link-focus-rgb: 101, 37, 148;
+  --jjjei-primary-link-helper-hover: #3c0068;
+  --jjjei-primary-link-helper-hover-rgb: 60, 0, 104;
+  --jjjei-primary-range-active: #c9b3da;
+  --jjjei-primary-text: #4b0082;
+  --jjjei-primary-table-bg: #dbcce6;
+  --jjjei-primary-table-color: #191c1f;
+  --jjjei-primary-table-border: #b4a9be;
+  --jjjei-primary-table-striped: #d1c3dc;
+  --jjjei-primary-table-active: #c8bad2;
+  --jjjei-primary-table-hover: #ccbfd7;
+  --jjjei-primary-base-bg: #b366b3;
+  --jjjei-primary-switch-focus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23a580c1'/%3E%3C/svg%3E");
+  --jjjei-primary-accordion-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%231e0034' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+}
+[data-bs-theme="dark"], [data-theme="dark"], .dark {
+  --jjjei-primary-subtle: #130021;
+  --jjjei-primary-border-subtle: #130021;
+  --jjjei-primary-faint: #3c0068;
+  --jjjei-primary-faint-border: #3c0068;
+  --jjjei-primary-body: #06000a;
+  --jjjei-primary-body-border: #0b0014;
+  --jjjei-primary-emphasis: #a37dbf;
+  --jjjei-primary-link: #9366b4;
+  --jjjei-primary-link-rgb: 147, 102, 180;
+  --jjjei-primary-link-hover: #a985c3;
+  --jjjei-primary-link-hover-rgb: 169, 133, 195;
+  --jjjei-primary-base-bg: #4d004d;
+  --jjjei-primary-accordion-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23a37dbf'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}

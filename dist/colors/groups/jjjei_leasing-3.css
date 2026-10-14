@@ -1,0 +1,56 @@
+/* jjjei_leasing-3: Leasing / Tenant Relations (v1: jjjei_leasing:3) */
+:root {
+  --jjjei-primary: #DC143C;
+  --jjjei-primary-rgb: 220, 20, 60;
+  --jjjei-primary-contrast: #f8f9fa;
+  --jjjei-primary-hover-contrast: #f8f9fa;
+  --jjjei-primary-active-contrast: #f8f9fa;
+  --jjjei-primary-hover-bg: #bb1133;
+  --jjjei-primary-hover-border: #b01030;
+  --jjjei-primary-active-bg: #b01030;
+  --jjjei-primary-active-border: #a50f2d;
+  --jjjei-primary-focus-rgb: 224, 54, 89;
+  --jjjei-primary-focus-border: #ee8a9e;
+  --jjjei-primary-subtle: #f6c4ce;
+  --jjjei-primary-border-subtle: #f6c4ce;
+  --jjjei-primary-faint: #e34363;
+  --jjjei-primary-faint-border: #e34363;
+  --jjjei-primary-shaded: #8f0d27;
+  --jjjei-primary-shaded-border: #8f0d27;
+  --jjjei-primary-body: #fdeff1;
+  --jjjei-primary-body-border: #fbe3e8;
+  --jjjei-primary-emphasis: #580818;
+  --jjjei-primary-link: #dc143c;
+  --jjjei-primary-link-rgb: 220, 20, 60;
+  --jjjei-primary-link-hover: #b01030;
+  --jjjei-primary-link-hover-rgb: 176, 16, 48;
+  --jjjei-primary-link-focus-rgb: 224, 54, 89;
+  --jjjei-primary-link-helper-hover: #b01030;
+  --jjjei-primary-link-helper-hover-rgb: 176, 16, 48;
+  --jjjei-primary-range-active: #f5b9c5;
+  --jjjei-primary-text: #dc143c;
+  --jjjei-primary-table-bg: #f8d0d8;
+  --jjjei-primary-table-color: #191c1f;
+  --jjjei-primary-table-border: #cbacb3;
+  --jjjei-primary-table-striped: #edc7cf;
+  --jjjei-primary-table-active: #e2bec6;
+  --jjjei-primary-table-hover: #e7c3ca;
+  --jjjei-primary-base-bg: #b36666;
+  --jjjei-primary-switch-focus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23ee8a9e'/%3E%3C/svg%3E");
+  --jjjei-primary-accordion-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23580818' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+}
+[data-bs-theme="dark"], [data-theme="dark"], .dark {
+  --jjjei-primary-subtle: #37050f;
+  --jjjei-primary-border-subtle: #37050f;
+  --jjjei-primary-faint: #b01030;
+  --jjjei-primary-faint-border: #b01030;
+  --jjjei-primary-body: #120205;
+  --jjjei-primary-body-border: #210309;
+  --jjjei-primary-emphasis: #ea728a;
+  --jjjei-primary-link: #ea728a;
+  --jjjei-primary-link-rgb: 234, 114, 138;
+  --jjjei-primary-link-hover: #ee8ea1;
+  --jjjei-primary-link-hover-rgb: 238, 142, 161;
+  --jjjei-primary-base-bg: #4d0000;
+  --jjjei-primary-accordion-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ea728a'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}

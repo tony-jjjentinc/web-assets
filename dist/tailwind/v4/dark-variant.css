@@ -1,0 +1,2 @@
+/* optional: make dark: follow data-bs-theme, data-theme and .dark (children included) */
+@custom-variant dark (&:where([data-bs-theme="dark"], [data-bs-theme="dark"] *, [data-theme="dark"], [data-theme="dark"] *, .dark, .dark *));

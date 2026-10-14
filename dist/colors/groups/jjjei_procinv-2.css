@@ -1,0 +1,56 @@
+/* jjjei_procinv-2: Procurement and Inventory / Inventory and Warehousing (v1: jjjei_procinv:2) */
+:root {
+  --jjjei-primary: #BC8F8F;
+  --jjjei-primary-rgb: 188, 143, 143;
+  --jjjei-primary-contrast: #191c1f;
+  --jjjei-primary-hover-contrast: #191c1f;
+  --jjjei-primary-active-contrast: #191c1f;
+  --jjjei-primary-hover-bg: #c6a0a0;
+  --jjjei-primary-hover-border: #c39a9a;
+  --jjjei-primary-active-bg: #c9a5a5;
+  --jjjei-primary-active-border: #c39a9a;
+  --jjjei-primary-focus-rgb: 164, 126, 126;
+  --jjjei-primary-focus-border: #dec7c7;
+  --jjjei-primary-subtle: #eee3e3;
+  --jjjei-primary-border-subtle: #eee3e3;
+  --jjjei-primary-faint: #c9a5a5;
+  --jjjei-primary-faint-border: #c9a5a5;
+  --jjjei-primary-shaded: #7a5d5d;
+  --jjjei-primary-shaded-border: #7a5d5d;
+  --jjjei-primary-body: #faf7f7;
+  --jjjei-primary-body-border: #f7f2f2;
+  --jjjei-primary-emphasis: #715656;
+  --jjjei-primary-link: #715656;
+  --jjjei-primary-link-rgb: 113, 86, 86;
+  --jjjei-primary-link-hover: #5a4545;
+  --jjjei-primary-link-hover-rgb: 90, 69, 69;
+  --jjjei-primary-link-focus-rgb: 133, 110, 110;
+  --jjjei-primary-link-helper-hover: #c9a5a5;
+  --jjjei-primary-link-helper-hover-rgb: 201, 165, 165;
+  --jjjei-primary-range-active: #ebdddd;
+  --jjjei-primary-text: #8d6b6b;
+  --jjjei-primary-table-bg: #f2e9e9;
+  --jjjei-primary-table-color: #191c1f;
+  --jjjei-primary-table-border: #c6c0c0;
+  --jjjei-primary-table-striped: #e7dedf;
+  --jjjei-primary-table-active: #dcd4d4;
+  --jjjei-primary-table-hover: #e1d9d9;
+  --jjjei-primary-base-bg: #d9b3b3;
+  --jjjei-primary-switch-focus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23dec7c7'/%3E%3C/svg%3E");
+  --jjjei-primary-accordion-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23715656' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+}
+[data-bs-theme="dark"], [data-theme="dark"], .dark {
+  --jjjei-primary-subtle: #2f2424;
+  --jjjei-primary-border-subtle: #2f2424;
+  --jjjei-primary-faint: #967272;
+  --jjjei-primary-faint-border: #967272;
+  --jjjei-primary-body: #0f0b0b;
+  --jjjei-primary-body-border: #1c1515;
+  --jjjei-primary-emphasis: #d7bcbc;
+  --jjjei-primary-link: #d7bcbc;
+  --jjjei-primary-link-rgb: 215, 188, 188;
+  --jjjei-primary-link-hover: #dfc9c9;
+  --jjjei-primary-link-hover-rgb: 223, 201, 201;
+  --jjjei-primary-base-bg: #734d4d;
+  --jjjei-primary-accordion-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23d7bcbc'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}

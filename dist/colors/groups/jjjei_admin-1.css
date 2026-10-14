@@ -1,0 +1,56 @@
+/* jjjei_admin-1: Admin / Building and Land Administration (BLA) (v1: jjjei_admin:1) */
+:root {
+  --jjjei-primary: #F9E547;
+  --jjjei-primary-rgb: 249, 229, 71;
+  --jjjei-primary-contrast: #191c1f;
+  --jjjei-primary-hover-contrast: #191c1f;
+  --jjjei-primary-active-contrast: #191c1f;
+  --jjjei-primary-hover-bg: #fae963;
+  --jjjei-primary-hover-border: #fae859;
+  --jjjei-primary-active-bg: #faea6c;
+  --jjjei-primary-active-border: #fae859;
+  --jjjei-primary-focus-rgb: 215, 199, 65;
+  --jjjei-primary-focus-border: #fcf2a3;
+  --jjjei-primary-subtle: #fef9d1;
+  --jjjei-primary-border-subtle: #fef9d1;
+  --jjjei-primary-faint: #faea6c;
+  --jjjei-primary-faint-border: #faea6c;
+  --jjjei-primary-shaded: #a2952e;
+  --jjjei-primary-shaded-border: #a2952e;
+  --jjjei-primary-body: #fffdf2;
+  --jjjei-primary-body-border: #fefce9;
+  --jjjei-primary-emphasis: #7d7324;
+  --jjjei-primary-link: #7d7324;
+  --jjjei-primary-link-rgb: 125, 115, 36;
+  --jjjei-primary-link-hover: #645c1c;
+  --jjjei-primary-link-hover-rgb: 100, 92, 28;
+  --jjjei-primary-link-focus-rgb: 143, 135, 68;
+  --jjjei-primary-link-helper-hover: #faea6c;
+  --jjjei-primary-link-helper-hover-rgb: 250, 234, 108;
+  --jjjei-primary-range-active: #fdf7c8;
+  --jjjei-primary-text: #7d7324;
+  --jjjei-primary-table-bg: #fefada;
+  --jjjei-primary-table-color: #191c1f;
+  --jjjei-primary-table-border: #d0cdb5;
+  --jjjei-primary-table-striped: #f2efd1;
+  --jjjei-primary-table-active: #e7e4c7;
+  --jjjei-primary-table-hover: #ede9cc;
+  --jjjei-primary-base-bg: #ffe766;
+  --jjjei-primary-switch-focus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23fcf2a3'/%3E%3C/svg%3E");
+  --jjjei-primary-accordion-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%237d7324' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+}
+[data-bs-theme="dark"], [data-theme="dark"], .dark {
+  --jjjei-primary-subtle: #3e3912;
+  --jjjei-primary-border-subtle: #3e3912;
+  --jjjei-primary-faint: #c7b739;
+  --jjjei-primary-faint-border: #c7b739;
+  --jjjei-primary-body: #141206;
+  --jjjei-primary-body-border: #25220b;
+  --jjjei-primary-emphasis: #fbef91;
+  --jjjei-primary-link: #fbef91;
+  --jjjei-primary-link-rgb: 251, 239, 145;
+  --jjjei-primary-link-hover: #fcf3a7;
+  --jjjei-primary-link-hover-rgb: 252, 243, 167;
+  --jjjei-primary-base-bg: #998100;
+  --jjjei-primary-accordion-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fbef91'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}

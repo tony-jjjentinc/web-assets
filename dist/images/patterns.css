@@ -1,0 +1,11 @@
+/* background patterns: <div class="bg-pattern-grid"> */
+.bg-pattern-bubbles{background-image:url("patterns/bubbles.svg") !important;background-repeat:repeat !important}
+.bg-pattern-circuit-board{background-image:url("patterns/circuit-board.svg") !important;background-repeat:repeat !important}
+.bg-pattern-diagonal-lines{background-image:url("patterns/diagonal-lines.svg") !important;background-repeat:repeat !important}
+.bg-pattern-diagonal-stripes{background-image:url("patterns/diagonal-stripes.svg") !important;background-repeat:repeat !important}
+.bg-pattern-dots{background-image:url("patterns/dots.svg") !important;background-size:16px 16px !important;background-repeat:repeat !important}
+.bg-pattern-grid{background-image:url("patterns/grid.svg") !important;background-size:20px 20px !important;background-repeat:repeat !important}
+.bg-pattern-hexagons{background-image:url("patterns/hexagons.svg") !important;background-repeat:repeat !important}
+.bg-pattern-texture{background-image:url("patterns/texture.svg") !important;background-repeat:repeat !important}
+.bg-pattern-texture2{background-image:url("patterns/texture2.svg") !important;background-repeat:repeat !important}
+.bg-pattern-topography{background-image:url("patterns/topography.svg") !important;background-repeat:repeat !important}
