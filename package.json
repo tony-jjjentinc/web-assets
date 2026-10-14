@@ -1,6 +1,6 @@
 {
   "name": "jjjei-assets",
-  "version": "0.0.0",
+  "version": "2.0.0-rc.1",
   "private": true,
   "description": "JJJEI shared design assets v2: Bootstrap override, Tailwind theme, colour tokens, fonts and images served via jsDelivr",
   "license": "SEE LICENSE IN LICENSE",
