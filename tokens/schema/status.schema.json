@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "minProperties": 1,
+  "propertyNames": { "pattern": "^[0-9]$" },
+  "additionalProperties": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["hex", "meaning"],
+    "properties": {
+      "hex": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+      "meaning": { "type": ["string", "null"] }
+    }
+  }
+}

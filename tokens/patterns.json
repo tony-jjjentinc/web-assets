@@ -1,0 +1,10 @@
+{
+  "grid": {
+    "background-size": "20px 20px",
+    "background-repeat": "repeat"
+  },
+  "dots": {
+    "background-size": "16px 16px",
+    "background-repeat": "repeat"
+  }
+}

@@ -1,0 +1,79 @@
+name: Release
+# 1. release-please keeps a release PR open (version bump + CHANGELOG, from Conventional Commits). It never tags.
+# 2. When that PR is merged, package.json has a version without a tag: build, test, tag a commit that holds dist/,
+#    create the GitHub Release, move `latest` (stable only), purge jsDelivr and verify what it serves.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: release
+  cancel-in-progress: false
+jobs:
+  release-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@v4
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  publish:
+    needs: release-pr
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # tags and history, for the release commit's parents
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Is there an untagged version?
+        id: ver
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          if [ "$VERSION" = "0.0.0" ]; then echo "state=placeholder" >> "$GITHUB_OUTPUT"
+          elif git ls-remote --exit-code --tags origin "refs/tags/v$VERSION" >/dev/null 2>&1; then echo "state=tagged" >> "$GITHUB_OUTPUT"
+          else echo "state=new" >> "$GITHUB_OUTPUT"; fi
+          case "$VERSION" in *-*) echo "pre=true" >> "$GITHUB_OUTPUT";; *) echo "pre=false" >> "$GITHUB_OUTPUT";; esac
+      - name: Build and gate
+        if: steps.ver.outputs.state == 'new'
+        run: |
+          npm ci
+          npm run validate
+          npm test
+          npm run build
+      - name: Tag the release commit (dist/ is only on tagged commits)
+        if: steps.ver.outputs.state == 'new'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/release-commit.mjs create --version "${{ steps.ver.outputs.version }}" --push
+      - name: GitHub Release
+        if: steps.ver.outputs.state == 'new'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          (cd dist && zip -qr ../dist.zip .)
+          gh release create "v${{ steps.ver.outputs.version }}" dist.zip dist/manifest.json \
+            --title "v${{ steps.ver.outputs.version }}" --generate-notes \
+            ${{ steps.ver.outputs.pre == 'true' && '--prerelease' || '' }}
+      - name: Move latest (fast-forward only)
+        if: steps.ver.outputs.state != 'placeholder' && steps.ver.outputs.pre == 'false'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/release-commit.mjs promote --version "${{ steps.ver.outputs.version }}" --push
+      - name: Purge jsDelivr (latest)
+        if: steps.ver.outputs.state != 'placeholder' && steps.ver.outputs.pre == 'false'
+        run: |
+          git checkout -q "v${{ steps.ver.outputs.version }}"
+          node scripts/cdn.mjs purge --ref latest
+      - name: Verify what jsDelivr serves
+        if: steps.ver.outputs.state != 'placeholder'
+        run: node scripts/cdn.mjs verify --version "${{ steps.ver.outputs.version }}" ${{ steps.ver.outputs.pre == 'true' && '--no-latest' || '' }}

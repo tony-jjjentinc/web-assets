@@ -1,0 +1,42 @@
+{
+  "0": {
+    "hex": "#28A745",
+    "meaning": "Complete, Resolved, Success, Active"
+  },
+  "1": {
+    "hex": "#0D6EFD",
+    "meaning": "Assigned, Information, Action Required"
+  },
+  "2": {
+    "hex": "#17A2B8",
+    "meaning": "Processing, Info"
+  },
+  "3": {
+    "hex": "#FFC107",
+    "meaning": "Pending Approval, Warning"
+  },
+  "4": {
+    "hex": "#FD7E14",
+    "meaning": "In Progress, Due Soon"
+  },
+  "5": {
+    "hex": "#DC3545",
+    "meaning": "Due Progress, Delayed, Danger"
+  },
+  "6": {
+    "hex": "#6F42C1",
+    "meaning": "Pending Verification"
+  },
+  "7": {
+    "hex": "#8B5E3C",
+    "meaning": "On Hold"
+  },
+  "8": {
+    "hex": "#6C757D",
+    "meaning": "Not Started, Read Only"
+  },
+  "9": {
+    "hex": "#343A40",
+    "meaning": "Cancelled, Void"
+  }
+}

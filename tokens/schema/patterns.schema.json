@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "propertyNames": { "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+  "additionalProperties": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "background-size": { "type": "string" },
+      "background-repeat": { "enum": ["repeat", "repeat-x", "repeat-y", "no-repeat", "space", "round"] }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["default", "variants"],
+  "additionalProperties": false,
+  "properties": {
+    "default": { "enum": ["ring", "pulse", "dots"] },
+    "variants": {
+      "type": "object",
+      "required": ["ring", "pulse", "dots"],
+      "additionalProperties": false,
+      "patternProperties": {
+        "^(ring|pulse|dots)$": {
+          "type": "object",
+          "required": ["width", "height", "animation-duration"],
+          "properties": {
+            "width": { "type": "string" }, "height": { "type": "string" }, "border-width": { "type": "string" },
+            "style": { "type": "string" }, "animation-duration": { "type": "string", "pattern": "^[0-9.]+m?s$" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "success": "#28A745",
+  "warning": "#FFC107",
+  "danger": "#DC3545",
+  "secondary": "#918F90",
+  "info": "#17A2B8",
+  "light": "#F8F9FA",
+  "dark": "#191C1F",
+  "jjjei-primary": "#184421",
+  "jjjei-secondary": "#918F90"
+}

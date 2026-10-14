@@ -1,0 +1,58 @@
+// Pieces used by both the Bootstrap core and the Tailwind extras (colour utilities that cannot be expressed as theme colours).
+@use "sass:map";
+
+// the noise layer of the gradients; $noise is null when disabled, so the layer becomes a transparent no-op
+@mixin noise($noise) {
+  @if $noise { --jjjei-noise: #{$noise}; } @else { --jjjei-noise: linear-gradient(transparent, transparent); }
+}
+
+@mixin gradients($names) {
+  @each $n in $names {
+    .bg-#{$n}-gradient { background: var(--jjjei-noise), linear-gradient(45deg, var(--jjjei-#{$n}) 0%, var(--jjjei-#{$n}-subtle) 100%) !important; }
+    .bg-#{$n}-gradient-subtle { background: var(--jjjei-noise), linear-gradient(45deg, var(--jjjei-#{$n}-subtle) 0%, color-mix(in srgb, var(--jjjei-#{$n}-subtle) 50%, transparent) 100%) !important; }
+  }
+}
+
+// Loaders, generated from tokens/loaders.json. v1's `.loader-dots` had no size and drew nothing; here it is three bouncing dots.
+@mixin loaders($l, $override-spinner: false) {
+  $ring: map.get($l, ring);
+  $pulse: map.get($l, pulse);
+  $dots: map.get($l, dots);
+  $dot: radial-gradient(circle closest-side, currentColor 92%, transparent);
+  @keyframes loader-spin { to { transform: rotate(360deg); } }
+  @keyframes loader-pulse { 0%, 100% { transform: scale(.8); opacity: .5; } 50% { transform: scale(1.2); opacity: 1; } }
+  @keyframes loader-dots {
+    0%, 60%, 100% { background-position: 0 100%, 50% 100%, 100% 100%; }
+    15% { background-position: 0 0, 50% 100%, 100% 100%; }
+    30% { background-position: 0 100%, 50% 0, 100% 100%; }
+    45% { background-position: 0 100%, 50% 100%, 100% 0; }
+  }
+  $ring-selector: '.loader';
+  @if $override-spinner { $ring-selector: '.loader, .spinner-border'; }
+  #{$ring-selector} {
+    display: inline-block; width: map.get($ring, width); height: map.get($ring, height); vertical-align: -.125em;
+    border: map.get($ring, border-width) solid currentColor; border-right-color: transparent; border-radius: 50%;
+    animation: loader-spin map.get($ring, animation-duration) linear infinite;
+  }
+  .loader-pulse {
+    display: inline-block; width: map.get($pulse, width); height: map.get($pulse, height); vertical-align: -.125em;
+    background-color: currentColor; border-radius: 50%; animation: loader-pulse map.get($pulse, animation-duration) ease-in-out infinite;
+  }
+  .loader-dots {
+    display: inline-block; width: map.get($dots, width); height: map.get($dots, height); vertical-align: -.125em;
+    background: $dot, $dot, $dot; background-size: 33.3333% 66.6667%; background-position: 0 100%, 50% 100%, 100% 100%; background-repeat: no-repeat;
+    animation: loader-dots map.get($dots, animation-duration) ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) { .loader, .loader-pulse, .loader-dots { animation-duration: 3s; } }
+}
+
+// $patterns: list of (name, url, size, repeat) maps; the artwork lives in images/patterns/
+@mixin patterns($patterns) {
+  @each $p in $patterns {
+    .bg-pattern-#{map.get($p, name)} {
+      background-image: url("#{map.get($p, url)}") !important;
+      @if map.has-key($p, size) { background-size: #{map.get($p, size)} !important; }
+      background-repeat: #{map.get($p, repeat)} !important;
+    }
+  }
+}

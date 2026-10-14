@@ -1,0 +1,32 @@
+name: Next
+# Release-candidate channel: every push to `develop` rebuilds the `next` branch (main + dist/), served as @next.
+on:
+  push:
+    branches: [develop]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: next
+  cancel-in-progress: true
+jobs:
+  next:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: |
+          npm ci
+          npm run validate
+          npm test
+          npm run build
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/release-commit.mjs next --push
+          node scripts/cdn.mjs purge --ref next

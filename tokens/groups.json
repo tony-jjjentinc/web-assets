@@ -1,0 +1,247 @@
+{
+  "jjjei_gmo-0": {
+    "hex": "#008000",
+    "label": "Base Color",
+    "department": "GMO",
+    "legacyId": "jjjei_gmo:0",
+    "status": "active"
+  },
+  "jjjei_gmo-1": {
+    "hex": "#2E8B57",
+    "label": "Audit",
+    "department": "GMO",
+    "legacyId": "jjjei_gmo:1",
+    "status": "active"
+  },
+  "jjjei_gmo-2": {
+    "hex": "#2F5B27",
+    "label": "Automation",
+    "department": "GMO",
+    "legacyId": "jjjei_gmo:2",
+    "status": "active"
+  },
+  "jjjei_gmo-3": {
+    "hex": "#228B22",
+    "label": "Streamlining",
+    "department": "GMO",
+    "legacyId": "jjjei_gmo:3",
+    "status": "active"
+  },
+  "jjjei_admin-0": {
+    "hex": "#FFD700",
+    "label": "Base Color",
+    "department": "Admin",
+    "legacyId": "jjjei_admin:0",
+    "status": "active"
+  },
+  "jjjei_admin-1": {
+    "hex": "#F9E547",
+    "label": "Building and Land Administration (BLA)",
+    "department": "Admin",
+    "legacyId": "jjjei_admin:1",
+    "status": "active"
+  },
+  "jjjei_admin-2": {
+    "hex": "#C9B037",
+    "label": "Compliance",
+    "department": "Admin",
+    "legacyId": "jjjei_admin:2",
+    "status": "active"
+  },
+  "jjjei_admin-3": {
+    "hex": "#E09F00",
+    "label": "Information Technology (IT)",
+    "department": "Admin",
+    "legacyId": "jjjei_admin:3",
+    "status": "active"
+  },
+  "jjjei_admin-4": {
+    "hex": "#C9A227",
+    "label": "Legal",
+    "department": "Admin",
+    "legacyId": "jjjei_admin:4",
+    "status": "active"
+  },
+  "jjjei_admin-5": {
+    "hex": "#FFC300",
+    "label": "Office Management (OM)",
+    "department": "Admin",
+    "legacyId": "jjjei_admin:5",
+    "status": "active"
+  },
+  "jjjei_facilities-0": {
+    "hex": "#0000FF",
+    "label": "Base Color",
+    "department": "Facilities",
+    "legacyId": "jjjei_facilities:0",
+    "status": "active"
+  },
+  "jjjei_facilities-1": {
+    "hex": "#97D9FF",
+    "label": "Architectural, Civil, and Structural (ACS)",
+    "department": "Facilities",
+    "legacyId": "jjjei_facilities:1",
+    "status": "active"
+  },
+  "jjjei_facilities-2": {
+    "hex": "#00CDE9",
+    "label": "Electrical and Electronics (EE)",
+    "department": "Facilities",
+    "legacyId": "jjjei_facilities:2",
+    "status": "active"
+  },
+  "jjjei_facilities-3": {
+    "hex": "#4682B4",
+    "label": "Mechanical",
+    "department": "Facilities",
+    "legacyId": "jjjei_facilities:3",
+    "status": "active"
+  },
+  "jjjei_facilities-4": {
+    "hex": "#0047AB",
+    "label": "Project (PJT)",
+    "department": "Facilities",
+    "legacyId": "jjjei_facilities:4",
+    "status": "active"
+  },
+  "jjjei_facilities-5": {
+    "hex": "#59A7FF",
+    "label": "Plumbing",
+    "department": "Facilities",
+    "legacyId": "jjjei_facilities:5",
+    "status": "active"
+  },
+  "jjjei_facilities-6": {
+    "hex": "#1E90FF",
+    "label": "Design and Drafting",
+    "department": "Facilities",
+    "legacyId": "jjjei_facilities:6",
+    "status": "active"
+  },
+  "jjjei_leasing-0": {
+    "hex": "#800000",
+    "label": "Base Color",
+    "department": "Leasing",
+    "legacyId": "jjjei_leasing:0",
+    "status": "active"
+  },
+  "jjjei_leasing-1": {
+    "hex": "#CD5C5C",
+    "label": "Events",
+    "department": "Leasing",
+    "legacyId": "jjjei_leasing:1",
+    "status": "active"
+  },
+  "jjjei_leasing-2": {
+    "hex": "#B22222",
+    "label": "Sales",
+    "department": "Leasing",
+    "legacyId": "jjjei_leasing:2",
+    "status": "active"
+  },
+  "jjjei_leasing-3": {
+    "hex": "#DC143C",
+    "label": "Tenant Relations",
+    "department": "Leasing",
+    "legacyId": "jjjei_leasing:3",
+    "status": "active"
+  },
+  "jjjei_hr-0": {
+    "hex": "#800080",
+    "label": "Base Color",
+    "department": "HR",
+    "legacyId": "jjjei_hr:0",
+    "status": "active"
+  },
+  "jjjei_hr-1": {
+    "hex": "#8A2BE2",
+    "label": "Operations",
+    "department": "HR",
+    "legacyId": "jjjei_hr:1",
+    "status": "active"
+  },
+  "jjjei_hr-2": {
+    "hex": "#4B0082",
+    "label": "Payroll and Benefits",
+    "department": "HR",
+    "legacyId": "jjjei_hr:2",
+    "status": "active"
+  },
+  "jjjei_procinv-0": {
+    "hex": "#C08081",
+    "label": "Base Color",
+    "department": "Procurement and Inventory",
+    "legacyId": "jjjei_procinv:0",
+    "status": "active"
+  },
+  "jjjei_procinv-1": {
+    "hex": "#FFB6C1",
+    "label": "Procurement",
+    "department": "Procurement and Inventory",
+    "legacyId": "jjjei_procinv:1",
+    "status": "active"
+  },
+  "jjjei_procinv-2": {
+    "hex": "#BC8F8F",
+    "label": "Inventory and Warehousing",
+    "department": "Procurement and Inventory",
+    "legacyId": "jjjei_procinv:2",
+    "status": "active"
+  },
+  "jjjei_controller-0": {
+    "hex": "#008080",
+    "label": "Base Color",
+    "department": "Controller",
+    "legacyId": "jjjei_controller:0",
+    "status": "active"
+  },
+  "jjjei_controller-1": {
+    "hex": "#66CDAA",
+    "label": "Payables",
+    "department": "Controller",
+    "legacyId": "jjjei_controller:1",
+    "status": "active"
+  },
+  "jjjei_controller-2": {
+    "hex": "#20B2AA",
+    "label": "Receivables",
+    "department": "Controller",
+    "legacyId": "jjjei_controller:2",
+    "status": "active"
+  },
+  "jjjei_controller-3": {
+    "hex": "#48D1CC",
+    "label": "Tax and Compliance",
+    "department": "Controller",
+    "legacyId": "jjjei_controller:3",
+    "status": "active"
+  },
+  "jjjei_treasury-0": {
+    "hex": "#F28500",
+    "label": "Base Color",
+    "department": "Treasury",
+    "legacyId": "jjjei_treasury:0",
+    "status": "active"
+  },
+  "jjjei_treasury-1": {
+    "hex": "#F6C36A",
+    "label": "Billing",
+    "department": "Treasury",
+    "legacyId": "jjjei_treasury:1",
+    "status": "active"
+  },
+  "jjjei_treasury-2": {
+    "hex": "#F4A460",
+    "label": "Collection",
+    "department": "Treasury",
+    "legacyId": "jjjei_treasury:2",
+    "status": "active"
+  },
+  "jjjei_treasury-3": {
+    "hex": "#FF6347",
+    "label": "Disbursement",
+    "department": "Treasury",
+    "legacyId": "jjjei_treasury:3",
+    "status": "active"
+  }
+}

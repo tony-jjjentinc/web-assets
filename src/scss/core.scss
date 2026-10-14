@@ -1,0 +1,160 @@
+// Bootstrap 5.3 override layer. Group-independent: every colour is a var(--jjjei-*) reference.
+// Expects (prepended by emit-bootstrap.mjs): $std $custom $all (colour names), $noise, $shadows, $radius, $font, $patterns, $loaders, $override-spinner.
+// Load after bootstrap.min.css. Source of truth for what is overridden: docs/IMPLEMENTATION_PLAN.md §5, Spike B.
+
+@use "sass:map";
+@use "shared";
+
+@mixin theme-scope { :root, [data-bs-theme], [data-theme], .dark { @content; } }
+$focus-ring: .25rem;
+
+// ── Root bridge: Bootstrap's own variables read the jjjei tokens (re-resolved in every theme scope) ──
+@include theme-scope {
+  @each $n in $all {
+    --bs-#{$n}: var(--jjjei-#{$n});
+    --bs-#{$n}-rgb: var(--jjjei-#{$n}-rgb);
+    --bs-#{$n}-text-emphasis: var(--jjjei-#{$n}-emphasis);
+    --bs-#{$n}-bg-subtle: var(--jjjei-#{$n}-subtle);
+    --bs-#{$n}-border-subtle: var(--jjjei-#{$n}-border-subtle);
+  }
+  --bs-link-color: var(--jjjei-primary-link);
+  --bs-link-color-rgb: var(--jjjei-primary-link-rgb);
+  --bs-link-hover-color: var(--jjjei-primary-link-hover);
+  --bs-link-hover-color-rgb: var(--jjjei-primary-link-hover-rgb);
+  --bs-focus-ring-color: rgba(var(--jjjei-primary-rgb), .25);
+  --bs-font-sans-serif: #{$font};
+  --bs-border-radius: #{$radius};
+  @include shared.noise($noise);
+}
+// light only: `:root` alone would also match <html data-bs-theme="dark"> and override Bootstrap's dark values
+:root:not([data-bs-theme]), [data-bs-theme=light] {
+  --bs-highlight-bg: var(--jjjei-warning-table-bg);
+  --bs-form-valid-color: var(--jjjei-success);
+  --bs-form-valid-border-color: var(--jjjei-success);
+  --bs-form-invalid-color: var(--jjjei-danger);
+  --bs-form-invalid-border-color: var(--jjjei-danger);
+}
+
+// ── Per colour (all names): buttons, tables, links, badges, variants, pills, loaders ──
+@each $n in $all {
+  .btn-#{$n} {
+    --bs-btn-color: var(--jjjei-#{$n}-contrast); --bs-btn-bg: var(--jjjei-#{$n}); --bs-btn-border-color: var(--jjjei-#{$n});
+    --bs-btn-hover-color: var(--jjjei-#{$n}-hover-contrast); --bs-btn-hover-bg: var(--jjjei-#{$n}-hover-bg); --bs-btn-hover-border-color: var(--jjjei-#{$n}-hover-border);
+    --bs-btn-focus-shadow-rgb: var(--jjjei-#{$n}-focus-rgb);
+    --bs-btn-active-color: var(--jjjei-#{$n}-active-contrast); --bs-btn-active-bg: var(--jjjei-#{$n}-active-bg); --bs-btn-active-border-color: var(--jjjei-#{$n}-active-border);
+    --bs-btn-disabled-color: var(--jjjei-#{$n}-contrast); --bs-btn-disabled-bg: var(--jjjei-#{$n}); --bs-btn-disabled-border-color: var(--jjjei-#{$n});
+  }
+  .btn-outline-#{$n} {
+    --bs-btn-color: var(--jjjei-#{$n}); --bs-btn-border-color: var(--jjjei-#{$n});
+    --bs-btn-hover-color: var(--jjjei-#{$n}-contrast); --bs-btn-hover-bg: var(--jjjei-#{$n}); --bs-btn-hover-border-color: var(--jjjei-#{$n});
+    --bs-btn-focus-shadow-rgb: var(--jjjei-#{$n}-rgb);
+    --bs-btn-active-color: var(--jjjei-#{$n}-contrast); --bs-btn-active-bg: var(--jjjei-#{$n}); --bs-btn-active-border-color: var(--jjjei-#{$n});
+    --bs-btn-disabled-color: var(--jjjei-#{$n}); --bs-btn-disabled-border-color: var(--jjjei-#{$n});
+  }
+  .table-#{$n} {
+    --bs-table-color: var(--jjjei-#{$n}-table-color); --bs-table-bg: var(--jjjei-#{$n}-table-bg); --bs-table-border-color: var(--jjjei-#{$n}-table-border);
+    --bs-table-striped-bg: var(--jjjei-#{$n}-table-striped); --bs-table-striped-color: var(--jjjei-#{$n}-table-color);
+    --bs-table-active-bg: var(--jjjei-#{$n}-table-active); --bs-table-active-color: var(--jjjei-#{$n}-table-color);
+    --bs-table-hover-bg: var(--jjjei-#{$n}-table-hover); --bs-table-hover-color: var(--jjjei-#{$n}-table-color);
+  }
+  // v2 fixes: stock hard-codes white/black text here and a blue hover (v1 left both stock)
+  .text-bg-#{$n} { color: var(--jjjei-#{$n}-contrast) !important; background-color: rgba(var(--jjjei-#{$n}-rgb), var(--bs-bg-opacity, 1)) !important; }
+  .link-#{$n} {
+    color: rgba(var(--jjjei-#{$n}-rgb), var(--bs-link-opacity, 1)) !important;
+    text-decoration-color: rgba(var(--jjjei-#{$n}-rgb), var(--bs-link-underline-opacity, 1)) !important;
+    &:hover, &:focus {
+      color: rgba(var(--jjjei-#{$n}-link-helper-hover-rgb), var(--bs-link-opacity, 1)) !important;
+      text-decoration-color: rgba(var(--jjjei-#{$n}-link-helper-hover-rgb), var(--bs-link-underline-opacity, 1)) !important;
+    }
+  }
+
+  // variants beyond Bootstrap
+  .bg-#{$n}-shaded { background-color: var(--jjjei-#{$n}-shaded) !important; }
+  .border-#{$n}-shaded { border-color: var(--jjjei-#{$n}-shaded-border) !important; }
+  .bg-#{$n}-faint { background-color: var(--jjjei-#{$n}-faint) !important; }
+  .border-#{$n}-faint { border-color: var(--jjjei-#{$n}-faint-border) !important; }
+  .bg-#{$n}-body { background-color: var(--jjjei-#{$n}-body) !important; }
+  .border-#{$n}-body { border-color: var(--jjjei-#{$n}-body-border) !important; }
+  .nav-pills-#{$n} {
+    --bs-nav-pills-link-active-bg: var(--jjjei-#{$n}); --bs-nav-pills-link-active-color: var(--jjjei-#{$n}-contrast);
+    &.nav-pills-subtle .nav-link.active, &.nav-pills-subtle .show > .nav-link { background-color: var(--jjjei-#{$n}-subtle) !important; color: var(--jjjei-#{$n}-emphasis) !important; }
+  }
+  .loader-#{$n} { color: var(--jjjei-#{$n}) !important; }
+}
+.nav-pills-subtle .nav-link.active, .nav-pills-subtle .show > .nav-link { background-color: var(--jjjei-primary-subtle) !important; color: var(--jjjei-primary-emphasis) !important; }
+.bg-primary-base { background-color: var(--jjjei-primary-base-bg) !important; }
+
+// ── Custom names only (stock already has the 8 Bootstrap names, driven by the bridge above) ──
+@each $n in $custom {
+  .bg-#{$n} { --bs-bg-opacity: 1; background-color: rgba(var(--bs-#{$n}-rgb), var(--bs-bg-opacity)) !important; }
+  .text-#{$n} { --bs-text-opacity: 1; color: rgba(var(--bs-#{$n}-rgb), var(--bs-text-opacity)) !important; }
+  .border-#{$n} { --bs-border-opacity: 1; border-color: rgba(var(--bs-#{$n}-rgb), var(--bs-border-opacity)) !important; }
+  .bg-#{$n}-subtle { background-color: var(--bs-#{$n}-bg-subtle) !important; }
+  .border-#{$n}-subtle { border-color: var(--bs-#{$n}-border-subtle) !important; }
+  .text-#{$n}-emphasis { color: var(--bs-#{$n}-text-emphasis) !important; }
+  .link-underline-#{$n} { --bs-link-underline-opacity: 1; text-decoration-color: rgba(var(--bs-#{$n}-rgb), var(--bs-link-underline-opacity)) !important; }
+  .alert-#{$n} { --bs-alert-color: var(--bs-#{$n}-text-emphasis); --bs-alert-bg: var(--bs-#{$n}-bg-subtle); --bs-alert-border-color: var(--bs-#{$n}-border-subtle); --bs-alert-link-color: var(--bs-#{$n}-text-emphasis); }
+  .list-group-item-#{$n} {
+    --bs-list-group-color: var(--bs-#{$n}-text-emphasis); --bs-list-group-bg: var(--bs-#{$n}-bg-subtle); --bs-list-group-border-color: var(--bs-#{$n}-border-subtle);
+    --bs-list-group-action-hover-color: var(--bs-emphasis-color); --bs-list-group-action-hover-bg: var(--bs-#{$n}-border-subtle);
+    --bs-list-group-action-active-color: var(--bs-emphasis-color); --bs-list-group-action-active-bg: var(--bs-#{$n}-border-subtle);
+    --bs-list-group-active-color: var(--bs-#{$n}-bg-subtle); --bs-list-group-active-bg: var(--bs-#{$n}-text-emphasis); --bs-list-group-active-border-color: var(--bs-#{$n}-text-emphasis);
+  }
+}
+
+// ── Primary-coloured Bootstrap components (stock hard-codes the blue; 25 rule groups, Spike B) ──
+$ring: 0 0 0 $focus-ring rgba(var(--jjjei-primary-rgb), .25);
+.btn-link { --bs-btn-focus-shadow-rgb: var(--jjjei-primary-link-focus-rgb); }
+.nav-pills { --bs-nav-pills-link-active-color: var(--jjjei-primary-contrast); --bs-nav-pills-link-active-bg: var(--jjjei-primary); }
+.nav-link:focus-visible { box-shadow: $ring; }
+.form-control:focus, .form-select:focus { border-color: var(--jjjei-primary-focus-border); box-shadow: var(--bs-box-shadow-inset), $ring; }
+.form-check-input:focus { border-color: var(--jjjei-primary-focus-border); box-shadow: $ring; }
+.form-check-input:checked, .form-check-input[type=checkbox]:indeterminate { background-color: var(--jjjei-primary); border-color: var(--jjjei-primary); }
+.form-switch .form-check-input:focus { --bs-form-switch-bg: var(--jjjei-primary-switch-focus); }
+.form-range::-webkit-slider-thumb { background-color: var(--jjjei-primary); }
+.form-range::-moz-range-thumb { background-color: var(--jjjei-primary); }
+.form-range::-webkit-slider-thumb:active { background-color: var(--jjjei-primary-range-active); }
+.form-range::-moz-range-thumb:active { background-color: var(--jjjei-primary-range-active); }
+.form-range:focus::-webkit-slider-thumb { box-shadow: 0 0 0 1px #fff, $ring; }
+.form-range:focus::-moz-range-thumb { box-shadow: 0 0 0 1px #fff, $ring; }
+// v2: active text uses the colour's contrast colour; v1/stock used a literal white (1.4:1 on gold)
+.pagination { --bs-pagination-focus-box-shadow: #{$ring}; --bs-pagination-active-bg: var(--jjjei-primary); --bs-pagination-active-border-color: var(--jjjei-primary); --bs-pagination-active-color: var(--jjjei-primary-contrast); }
+.progress, .progress-stacked { --bs-progress-bar-bg: var(--jjjei-primary); --bs-progress-bar-color: var(--jjjei-primary-contrast); }
+.dropdown-menu, .dropdown-menu-dark { --bs-dropdown-link-active-bg: var(--jjjei-primary); --bs-dropdown-link-active-color: var(--jjjei-primary-contrast); }
+.list-group { --bs-list-group-active-bg: var(--jjjei-primary); --bs-list-group-active-border-color: var(--jjjei-primary); --bs-list-group-active-color: var(--jjjei-primary-contrast); }
+.accordion { --bs-accordion-btn-focus-border-color: var(--jjjei-primary-focus-border); --bs-accordion-btn-focus-box-shadow: #{$ring}; --bs-accordion-btn-active-icon: var(--jjjei-primary-accordion-icon); }
+[data-bs-theme=dark] .accordion-button::after { --bs-accordion-btn-icon: var(--jjjei-primary-accordion-icon); --bs-accordion-btn-active-icon: var(--jjjei-primary-accordion-icon); }
+.btn-close:focus { box-shadow: $ring; }
+// the primary :checked rule above has the same specificity as stock's validation rules and comes later, so restate those
+.form-check-input.is-valid, .was-validated .form-check-input:valid { border-color: var(--bs-form-valid-border-color); }
+.form-check-input.is-valid:checked, .was-validated .form-check-input:valid:checked { background-color: var(--bs-form-valid-color); }
+.form-check-input.is-invalid, .was-validated .form-check-input:invalid { border-color: var(--bs-form-invalid-border-color); }
+.form-check-input.is-invalid:checked, .was-validated .form-check-input:invalid:checked { background-color: var(--bs-form-invalid-color); }
+// valid/invalid feedback: stock bakes the green/red into data-URIs; focus rings already follow --bs-success-rgb / --bs-danger-rgb
+.form-control.is-valid, .was-validated .form-control:valid { background-image: var(--jjjei-success-valid-icon); }
+.form-select.is-valid:not([multiple]):not([size]), .form-select.is-valid:not([multiple])[size="1"],
+.was-validated .form-select:valid:not([multiple]):not([size]), .was-validated .form-select:valid:not([multiple])[size="1"] { --bs-form-select-bg-icon: var(--jjjei-success-valid-icon); }
+.form-control.is-invalid, .was-validated .form-control:invalid { background-image: var(--jjjei-danger-invalid-icon); }
+.form-select.is-invalid:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"],
+.was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"] { --bs-form-select-bg-icon: var(--jjjei-danger-invalid-icon); }
+
+// ── Design tokens: enable-shadows effects (v1 compiled with $enable-shadows: true) ──
+@if $shadows {
+  // v1 set --bs-btn-box-shadow: none, which makes the :focus-visible rule's `none, <ring>` list invalid and drops the focus ring; a zero shadow keeps it
+  .btn { --bs-btn-box-shadow: 0 0 #0000; --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, .125); box-shadow: var(--bs-btn-box-shadow); }
+  .btn-link { --bs-btn-active-shadow: 0 0 #0000; }
+  .btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show { box-shadow: var(--bs-btn-active-shadow); }
+  .btn-check:checked + .btn:focus-visible, :not(.btn-check) + .btn:active:focus-visible, .btn:first-child:active:focus-visible, .btn.active:focus-visible, .btn.show:focus-visible { box-shadow: var(--bs-btn-active-shadow), var(--bs-btn-focus-box-shadow); }
+  .btn-check:checked:focus-visible + .btn { box-shadow: var(--bs-btn-active-shadow), var(--bs-btn-focus-box-shadow); }
+  .form-control.is-valid:focus, .was-validated .form-control:valid:focus, .form-select.is-valid:focus, .was-validated .form-select:valid:focus { box-shadow: var(--bs-box-shadow-inset), 0 0 0 $focus-ring rgba(var(--bs-success-rgb), .25); }
+  .form-control.is-invalid:focus, .was-validated .form-control:invalid:focus, .form-select.is-invalid:focus, .was-validated .form-select:invalid:focus { box-shadow: var(--bs-box-shadow-inset), 0 0 0 $focus-ring rgba(var(--bs-danger-rgb), .25); }
+  .form-control, .form-select, .progress, .progress-stacked { box-shadow: var(--bs-box-shadow-inset); }
+  .form-range::-webkit-slider-runnable-track, .form-range::-moz-range-track { box-shadow: var(--bs-box-shadow-inset); }
+  .form-range::-webkit-slider-thumb, .form-range::-moz-range-thumb { box-shadow: 0 .1rem .25rem rgba(0, 0, 0, .1); }
+  .dropdown-menu { box-shadow: var(--bs-box-shadow); }
+}
+
+// ── Gradients, loaders and patterns: shared with the Tailwind extras ──
+@include shared.gradients($all);
+@include shared.loaders($loaders, $override-spinner);
+@include shared.patterns($patterns);

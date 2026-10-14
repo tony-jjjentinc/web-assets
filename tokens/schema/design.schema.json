@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "font-family",
+    "font-family-raw",
+    "border-radius",
+    "enable-shadows",
+    "btn-box-shadow",
+    "min-contrast-ratio",
+    "color-contrast-dark",
+    "color-contrast-light",
+    "subtle-bg-tint-weight",
+    "subtle-border-tint-weight",
+    "subtle-bg-shade-weight",
+    "subtle-border-shade-weight",
+    "faint-bg-tint-weight",
+    "faint-border-tint-weight",
+    "faint-bg-shade-weight",
+    "faint-border-shade-weight",
+    "shaded-bg-shade-weight",
+    "shaded-border-shade-weight",
+    "base-bg-tint-strength",
+    "base-bg-shade-strength",
+    "body-bg-tint-weight",
+    "body-border-tint-weight",
+    "body-bg-shade-weight",
+    "body-border-shade-weight",
+    "enable-gradient-noise",
+    "gradient-noise-opacity",
+    "override-bootstrap-spinner",
+    "gradient-tint-weight",
+    "dark-emphasis-tint-weight",
+    "light-emphasis-shade-weight",
+    "accessible-shade-start",
+    "dark-surface"
+  ],
+  "properties": {
+    "font-family": {
+      "type": "string"
+    },
+    "font-family-raw": {
+      "type": "string"
+    },
+    "border-radius": {
+      "type": "string"
+    },
+    "enable-shadows": {
+      "type": "boolean"
+    },
+    "btn-box-shadow": {
+      "type": "string"
+    },
+    "min-contrast-ratio": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 21
+    },
+    "color-contrast-dark": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "color-contrast-light": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "subtle-bg-tint-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "subtle-border-tint-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "subtle-bg-shade-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "subtle-border-shade-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "faint-bg-tint-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "faint-border-tint-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "faint-bg-shade-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "faint-border-shade-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "shaded-bg-shade-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "shaded-border-shade-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "base-bg-tint-strength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "base-bg-shade-strength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "body-bg-tint-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "body-border-tint-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "body-bg-shade-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "body-border-shade-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "enable-gradient-noise": {
+      "type": "boolean"
+    },
+    "gradient-noise-opacity": {
+      "type": "number"
+    },
+    "override-bootstrap-spinner": {
+      "type": "boolean"
+    },
+    "gradient-tint-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "dark-emphasis-tint-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "light-emphasis-shade-weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "accessible-shade-start": {
+      "type": "number"
+    },
+    "dark-surface": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    }
+  }
+}

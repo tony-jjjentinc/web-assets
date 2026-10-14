@@ -1,0 +1,24 @@
+{
+  "default": "ring",
+  "variants": {
+    "ring": {
+      "width": "2rem",
+      "height": "2rem",
+      "border-width": "0.2em",
+      "style": "dual-ring",
+      "animation-duration": "0.75s"
+    },
+    "pulse": {
+      "width": "2rem",
+      "height": "2rem",
+      "style": "pulse",
+      "animation-duration": "1s"
+    },
+    "dots": {
+      "width": "3rem",
+      "height": "1rem",
+      "style": "dots",
+      "animation-duration": "1.2s"
+    }
+  }
+}

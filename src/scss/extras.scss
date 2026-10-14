@@ -1,0 +1,8 @@
+// Tailwind extras: what a Tailwind theme cannot express as colour keys (gradients with the noise layer, loaders, patterns).
+// Colours themselves (bg-primary-subtle, text-primary-emphasis, ...) come from theme.css / the v3 preset.
+@use "shared";
+
+:root { @include shared.noise($noise); }
+@include shared.gradients($all);
+@include shared.loaders($loaders, $override-spinner);
+@include shared.patterns($patterns);
